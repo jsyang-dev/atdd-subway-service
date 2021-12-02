@@ -32,6 +32,10 @@ public class Distance {
         return new Distance(distance - newDistance.distance);
     }
 
+    public boolean greaterThan(int distance) {
+        return this.distance > distance;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
