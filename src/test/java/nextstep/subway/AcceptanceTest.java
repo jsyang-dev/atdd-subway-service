@@ -43,7 +43,7 @@ public class AcceptanceTest {
                 .extract();
     }
 
-    public static ExtractableResponse<Response> post(String uri, Object body, Object... params) {
+    public static <T> ExtractableResponse<Response> post(String uri, T body, Object... params) {
         return given()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body(body)
@@ -52,7 +52,7 @@ public class AcceptanceTest {
                 .extract();
     }
 
-    public static ExtractableResponse<Response> postWithAuth(String uri, Object body, String accessToken, Object... params) {
+    public static <T> ExtractableResponse<Response> postWithAuth(String uri, T body, String accessToken, Object... params) {
         return given()
                 .auth().oauth2(accessToken)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
@@ -62,7 +62,7 @@ public class AcceptanceTest {
                 .extract();
     }
 
-    public static ExtractableResponse<Response> put(String uri, Object body, Object... params) {
+    public static <T> ExtractableResponse<Response> put(String uri, T body, Object... params) {
         return given()
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body(body)
@@ -71,7 +71,7 @@ public class AcceptanceTest {
                 .extract();
     }
 
-    public static ExtractableResponse<Response> putWithAuth(String uri, Object body, String accessToken, Object... params) {
+    public static <T> ExtractableResponse<Response> putWithAuth(String uri, T body, String accessToken, Object... params) {
         return given()
                 .auth().oauth2(accessToken)
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
